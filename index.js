@@ -6,6 +6,9 @@ const Person = require('./models/person.js')
 const bodyparser = require('body-parser');
 const menuItem = require('./models/menuItem.js')
 const MenuRoutes = require('./routes/menu.routes.js')
+require('dotenv').config();
+
+const port = process.env.PORT || 3000;
 
 app.use(bodyparser.json())
 app.use('/person',PersonRoutes)
@@ -22,7 +25,8 @@ app.get('/', logRequest, function(req,res){
 })
 
 
-app.listen(8000, ()=>{
+
+app.listen(port, ()=>{
     console.log("Server is running");
 })
 

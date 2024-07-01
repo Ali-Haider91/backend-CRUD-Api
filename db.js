@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // define mongoDB connection
-const mongoDB_URI = 'mongodb+srv://mblowingprince:miSrOsDGEEuKrZAO@cluster0.sljwyyl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+const mongoDB_URI = process.env.DB_URL
 
 // setup a MongoDB Connection
 const ConnectDB = async ()=>{
