@@ -12,6 +12,15 @@ app.use('/person',PersonRoutes)
 app.use('/menu',MenuRoutes)
 CallDB();
 
+// Middleware function
+const logRequest = (req, res, next)=>{
+    console.log(`${new Date().toLocaleString()} Request made to ${req.originalUrl}`);
+}
+
+app.get('/', logRequest, function(req,res){
+    res.send("welocome to hotel")
+})
+
 
 app.listen(8000, ()=>{
     console.log("Server is running");
